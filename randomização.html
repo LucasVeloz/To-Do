@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Cores Randômicas</title>
+</head>
+<body>
+    <h1>Gerador de Cores Randômicas</h1>
+    <div id="button">
+        <div class="quad">
+            <button onclick="color()">Clique aqui para começar</button>
+        </div>
+    </div>
+    <script>
+        function color() {
+            var quadrado = document.querySelector('.quad');
+            quadrado.style.width = '500px';
+            quadrado.style.height = '500px';
+            quadrado.style.backgroundColor = getRandomColor() ;
+            
+        }
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
